@@ -15,3 +15,4 @@ def applicationsAddPageView(request) :
 
 
 # create new views when we learn the perameters
+# Connor made this edit
