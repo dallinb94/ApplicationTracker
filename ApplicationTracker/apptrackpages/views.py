@@ -12,3 +12,6 @@ def applicationsEditPageView(request) :
 
 def applicationsAddPageView(request) :
     return HttpResponse('This is where you can add applications')
+
+
+# create new views when we learn the perameters
