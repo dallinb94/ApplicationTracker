@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ApplicationTracker',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'USER': 'SuperUser 2',
+        'PASSWORD': 'Admin',
         'HOST': 'localhost'
     }
 }
@@ -132,4 +132,3 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'apptrackpages.User'

@@ -1,18 +1,22 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 def indexPageView(request) :
-    return HttpResponse('This is the index page')
+    return render(request, 'apptrackpages/ViewAllAPplications.html')
 
 def applicationsPageView(request) :
-    return HttpResponse('This is where you see applications')
+    return render(request, 'apptrackpages/ViewApplicaiton.html')
+
 
 def applicationsEditPageView(request) :
-    return HttpResponse('This is where you can edit your applications')
+    return render(request, 'apptrackpages/editApplication.html')
 
 def applicationsAddPageView(request) :
-    return HttpResponse('This is where you can add applications')
+    return render(request, 'apptrackpages/addApplication.html')
 
+def loginPageView(request) :
+    return render(request, 'apptrackpages/login.html')
 
 # create new views when we learn the perameters
 # Connor made this edit
