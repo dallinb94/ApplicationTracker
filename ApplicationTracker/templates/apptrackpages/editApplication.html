@@ -1,3 +1,46 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-editApplication
-{% endblock content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class='container'>
+    <div class='text-left'>
+        <h2 class='section-heading text'>Edit Application</h2>
+    </div>
+    <br>
+    <form name='form' method='post' action='{% url 'update' %}'>
+        {% csrf_token %}
+        <input type='hidden' id='application_id' name='application_id' value='{{application.id}}'>
+
+        <label for='CompanyName'>Company Name:</label>
+        <input type='text' name='CompanyName' id='CompanyName' value='{{application.CompanyName}}' autofocus>
+        <br><br>
+        <label for='RecruiterName'>Recruiter Name:</label>
+        <input type='text' name='RecruiterName' id='RecruiterName' value='{{application.RecruiterName}}' autofocus>
+        <br><br>
+
+        <label for='RecruiterEmail'>Recruiter Email:</label>
+        <input type='email' name='RecruiterEmail' id='RecruiterEmail' value='{{application.RecruiterEmail}}' autofocus>
+        <br><br>
+
+        <label for='Status'>Status:</label>
+        <input type='text' name='Status' id='Status' value='{{application.Status}}' autofocus>
+        <br><br>
+
+        <label for='EstimatedSalary'>Salary:</label>
+        <input type='number' name='EstimatedSalary' id='EstimatedSalary' value='{{application.EstimatedSalary}}'
+            autofocus max='999999'>
+        <br><br>
+
+        <label for='ApplicationNotes'>Application Notes:</label>
+        <input type='text' name='ApplicationNotes' id='ApplicationNotes' value='{{application.ApplicationNotes}}'
+            autofocus>
+        <br><br>
+
+        <label for='ResumePDF'>Resume:</label>
+        <input type='file' name='ResumePDF' id='ResumePDF' value='{{application.ResumePDF}}' autofocus>
+        <br><br>
+
+        <button type='submit'>Update</button>
+    </form>
+
+    {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid px-4" style='text-align:center;'>
+    <h1 class="mt-4">Welcome to AppTrac</h1>
+    <h3>Your #1 Tool for Tracking Job Applications</h3>
+</div>
+
+<br>
+
+<div class="container-fluid px-4" style='text-align:center;'>
+    {% if user.is_authenticated %}
+    <p><a class="btn btn-primary" href="{% url 'allapplications' %}">Get Started</a></p>
+    {% else %}
+    <p><a class='btn btn-primary' href='{% url "login" %}'>Get Started</a></p>
+    {% endif %}
+
+</div>
+
+{% endblock content %}

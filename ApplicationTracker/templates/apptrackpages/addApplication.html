@@ -1,3 +1,46 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-addApplication
-{% endblock content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class='container'>
+    <div class='text-left'>
+        <h2 class='section-heading text-uppercase'>Add Application</h2>
+    </div>
+    <br>
+    <form name='form' method='post' action='{% url 'add' %}'>
+        {% csrf_token %}
+        <label for='CompanyName'>Company name:</label>
+        <input type='text' name='CompanyName' id='CompanyName' autofocus>
+        <br><br>
+
+        <label for='DateApplied'>Date applied:</label>
+        <input type='date' name='DateApplied' id='DateApplied'>
+        <br><br>
+
+        <label for='RecruiterName'>Recruiter name:</label>
+        <input type='text' name='RecruiterName' id='RecruiterName'>
+        <br><br>
+
+        <label for='RecruiterEmail'>Recruiter email:</label>
+        <input type='email' name='RecruiterEmail' id='RecruiterEmail'>
+        <br><br>
+
+        <label for='Status'>Status:</label>
+        <input type='text' name='Status' id='Status'>
+        <br><br>
+
+        <label for='ApplicationNotes'>Application notes:</label>
+        <input type='text' name='ApplicationNotes' id='ApplicationNotes'>
+        <br><br>
+
+        <label for='EstimatedSalary'>Estimated salary:</label>
+        <input type='number' name='EstimatedSalary' id='EstimatedSalary' max='999999'>
+        <br><br>
+
+        <label for='ResumePDF'>Resume:</label>
+        <input type='file' name='ResumePDF' id='ResumePDF'>
+        <br><br>
+
+        <button class='btn btn-primary' type='submit'>Add</button>
+    </form>
+    {% endblock content %}

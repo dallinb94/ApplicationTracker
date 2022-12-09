@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apptrackpages.apps.ApptrackpagesConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +80,9 @@ WSGI_APPLICATION = 'ApplicationTracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ApplicationTracker',
-        'USER': 'SuperUser 2',
-        'PASSWORD': 'Admin',
+        'NAME': 'applicationtracker',
+        'USER': 'postgres',
+        'PASSWORD': 'brobrobeanz',
         'HOST': 'localhost'
     }
 }
@@ -132,3 +133,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = "landing"
+LOGOUT_REDIRECT_URL = "landing"
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
